@@ -1,0 +1,49 @@
+# Abdirizak Ali
+
+# Methods used 
+# forward(value): It moves the turtle in forward direction.
+# speed(value): It changes the speed of the turtle.
+# penup(): Stop drawing.
+# pendown(): Start drawing.
+# left(value): It moves the turtle towards the left.
+
+# import turtle
+import turtle
+  
+# initialise turtle instance
+star = turtle.Turtle()
+  
+# increases the speed of turtle
+star.speed(500)
+  
+# to change the background color
+star.getscreen().bgcolor("White")
+star.color("Blue")
+  
+# stop drawing
+star.penup()
+  
+# move the turtle
+star.goto((-200, 50))
+  
+# start drawing
+star.pendown()
+  
+# function to draw stars
+def stars(turtle, size):
+    if size <= 10:
+        return
+    else:
+        for i in range(5):
+            
+            # moving turtle forward
+            turtle.forward(size)
+            stars(turtle, size/3)
+  
+            # moving turtle left
+            turtle.left(216)
+  
+  
+# calling the star function
+stars(star, 360)
+turtle.done()
